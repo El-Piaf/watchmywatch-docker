@@ -37,7 +37,7 @@ services:
       - wmwnet
 
   backend:
-    image: watchmywatch-backend:latest
+    image: watchmywatch/repo:backend
     container_name: backend
     # restart: on-failure
     # build:
@@ -65,7 +65,7 @@ services:
       - traefik.http.services.backend.loadbalancer.sticky=true
       
   frontadmin:
-    image: watchmywatch-frontadmin:latest
+    image: watchmywatch/repo:frontendadmin
     container_name: frontadmin
     # restart: always
     # build:
@@ -90,7 +90,7 @@ services:
       - traefik.http.services.frontadmin.loadbalancer.sticky=true
       
   frontend:
-    image: watchmywatch-frontend:latest
+    image: watchmywatch/repo:frontend
     container_name: frontend
     # restart: always
     # build:
